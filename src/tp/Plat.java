@@ -3,12 +3,10 @@ package tp;
 public class Plat {
 	private String nomPlat;
 	private double prixPlat;
-	private int qte;
 	
-	public Plat(String plat, double prix, int quantite){
+	public Plat(String plat, double prix){
 		nomPlat = plat;
 		prixPlat = prix;
-		qte = quantite;
 		
 	}
 	
@@ -21,10 +19,6 @@ public class Plat {
 		return prixPlat;
 	}
 	
-	public int getQte (){
-		return qte;
-	}
-	
 	public void setNomPlat(String plat){
 		nomPlat = plat;
 	}
@@ -33,7 +27,13 @@ public class Plat {
 		prixPlat = prix;
 	}
 	
-	public void setQte(int quantite){
-		qte = quantite;
+	public boolean equals( Object obj ) {
+		boolean equals = false;
+		if ( obj instanceof Plat ) {
+			if ( this.getNomPlat().equals( ( (Plat) obj ).getNomPlat() ) ) {
+				equals = true;
+			}
+		}
+		return equals;
 	}
 }

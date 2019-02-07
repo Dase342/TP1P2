@@ -3,10 +3,12 @@ package tp;
 public class Commande {
 	private Client client;
 	private Plat plat;
+	private int qte;
 	
-	public Commande (Client clientCommande, Plat platCommande){
+	public Commande (Client clientCommande, Plat platCommande, int qteCommande){
 		client = clientCommande;
 		plat = platCommande;
+		qte = qteCommande;
 	}
 	
 	public Client getClient(){
@@ -14,6 +16,9 @@ public class Commande {
 	}
 	public Plat getPlat(){
 		return plat;
+	}
+	public int getQte(){
+		return qte;
 	}
 	public void setClient(Client clientCommande){
 		client = clientCommande;
@@ -25,6 +30,6 @@ public class Commande {
 	
 	public double getTotale(){
 		
-		return plat.getPrixPlat()*plat.getQte();
+		return plat.getPrixPlat()*getQte();
 	}
 }

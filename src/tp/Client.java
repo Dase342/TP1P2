@@ -28,8 +28,18 @@ public class Client {
 	@Override
 	
 	public String toString(){
-		return nom + " " + total + "$";
+		return (nom + " " + total + "$");
 	}
 	
-
+	@Override
+	
+    public boolean equals(Object obj) {
+       boolean equals = false;
+       if(obj instanceof Client) {
+    	   if (this.getNom().equals( ( (Client) obj ).getNom())) {
+    		   equals = true;
+    	   }
+       }
+		return equals;
+	}
 }
