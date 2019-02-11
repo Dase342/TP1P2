@@ -1,6 +1,8 @@
 package tp;
 
 import java.util.List;
+import java.util.Scanner;
+
 
 public class Main {
 
@@ -10,7 +12,12 @@ public class Main {
 		List<Client> listClient;
 		List<Commande> listCommande;
 		
-		TextFile fichier = new TextFile(System.getProperty("user.dir")+"\\tp1.txt");
+		System.out.print("Entrer le nom du fichier: ");
+		Scanner scanner = new Scanner(System.in);
+		String fic = scanner.nextLine();
+		scanner.close();
+		
+		TextFile fichier = new TextFile(System.getProperty("user.dir")+"\\" + fic);
 		
 		try {
 			listClient = fichier.getClient();
@@ -35,5 +42,7 @@ public class Main {
 		}
 		
 	}
+	
+	
 
 }
