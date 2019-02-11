@@ -14,6 +14,7 @@ public class TextFile{
 		try {
 			  String filestring = new Scanner(new File(path)).useDelimiter("\\A").next();
 			  file = filestring.split( "\\r\\n" );
+			  
 		} catch (IOException e) {
 			System.out.println( "Introuvable : " + path );
 		}
