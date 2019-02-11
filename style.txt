@@ -1,0 +1,10 @@
+Variable en minuscule.
+Constante en majuscule.
+
+Les noms de variable à recevoir sont précis.
+ex: public void setNom(String nomClient){
+	nom = nomClient;
+}
+
+Les noms des méthodes sont simples.
+ex: getNom(),setPrix(),addTotale().
