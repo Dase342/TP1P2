@@ -35,6 +35,23 @@ public class TextFile{
 		}
 		return client;
 	}
+	public List<Plat> getPlat(){
+		List<Plat> plats = new ArrayList<Plat>();
+		boolean dansPlats = false;
+		String[] ligne = null;
+		
+		for ( int i = 0; i < file.length; i++ ) {
+			if ( file[i].equals( "Plats:" ) ) {
+				dansPlats = true;
+			} else if ( file[i].equals( "Commandes:" ) ) {
+				dansPlats = false;
+			} else if ( dansPlats ) {
+				ligne = file[i].split( " " );
+				plats.add( new Plat( ligne[0], Double.parseDouble( ligne[1] ) ) );
+			}
+		}
+		return plats;
+	}
 		
 
 }

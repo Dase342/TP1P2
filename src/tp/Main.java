@@ -15,7 +15,8 @@ public class Main {
 		try {
 			
 			listClient = fichier.getClient();
-			
+			listPlat = fichier.getPlat();
+
 		} catch ( Exception e ) {
 			System.out.println( "Le fichier ne respecte pas le format demandé !" );
 		}
