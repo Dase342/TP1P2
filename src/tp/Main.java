@@ -13,11 +13,8 @@ public class Main {
 		TextFile fichier = new TextFile(System.getProperty("user.dir")+"\\tp1.txt");
 		
 		try {
-			listClient = fichier.getClient();
-			listPlat = fichier.getPlat();
-			listCommande = fichier.getCommandes( listClient, listPlat );
+
 			
-			facture(listClient, listCommande);
 			
 		} catch ( Exception e ) {
 			System.out.println( "Le fichier ne respecte pas le format demandé !" );
