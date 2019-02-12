@@ -52,6 +52,35 @@ public class TextFile{
 		}
 		return plats;
 	}
+	public List<Commande> getCommandes(List<Client> listClient, List<Plat> listPlat){
+		List<Commande> commandes = new ArrayList<Commande>();
+		Client client;
+		Plat plat;
+		int qte;
 		
+		boolean dansCommande= false;
+		String[] ligne;
+		int index = -1;
+
+	for ( int i = 0; i < file.length; i++ ) {
+
+		if ( file[i].equals( "Commandes:" ) ) {
+			dansCommande = true;
+		} else if ( dansCommande ) {
+			ligne = file[i].split( " " );				
+			qte = Integer.parseInt( ligne[2] );
+			index = listClient.indexOf( new Client( ligne[0] ) );
+			client = listClient.get( index );
+			index = listPlat.indexOf( new Plat( ligne[1], 0 ) );
+
+			plat = listPlat.get( index );
+			commandes.add( new Commande( client, plat, qte ) );
+
+		}
+	}
+
+	return commandes;
+
+}
 
 }
