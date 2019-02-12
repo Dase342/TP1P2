@@ -18,5 +18,23 @@ public class TextFile{
 			System.out.println( "Introuvable : " + path );
 		}
 	}
+	
+	public List<Client> getClient(){
+		List<Client> client = new ArrayList<Client>();
+		boolean dansClient = false;
+		
+		for ( int i = 0; i < file.length; i++ ) {
+			if ( file[i].equals( "Clients:" ) ) {
+				dansClient = true;
+			} else if ( file[i].equals( "Plats:" ) ) {
+				dansClient = false;
+			} else if ( dansClient ) {
+				client.add( new Client( file[i] ) );
+			}
+
+		}
+		return client;
+	}
+		
 
 }
